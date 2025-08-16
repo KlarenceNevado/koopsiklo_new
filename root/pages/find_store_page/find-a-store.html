@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Store | KOOPSIKLO</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="../../resources/images/koopsiklo.jpg">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'koops-green': '#80c441',
+                        'koops-dark': '#0a0a0a',
+                        'koops-gray': '#1a1a1a'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font  for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- ✅ Custom CSS: from root/resources/css -->
+    <link rel="stylesheet" href="../../resources/css/find_a_store_style.css">
+
+    <!-- ✅ Custom JS: from root/resources/js -->
+    <script src="../../resources/js/find_a_store_script.js"></script>
+
+</head>
+<body class="bg-koops-dark text-white">
+
+
+<!-- ========================================
+     HTML STRUCTURE - NAVIGATION SECTION
+     ======================================== -->
+<nav class="bg-koops-gray shadow-lg fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="../../index.html">
+                    <img src="../../resources/images/koopsiklo_logo.jpg" alt="KOOPSIKLO Logo" width="132.54" height="32">
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                    <a href="../../pages/motorcycles_page/motorcycles.html" class="text-white hover:text-koops-green px-3 py-2 rounded-md text-sm font-medium transition-colors">Motorcycles</a>
+                    <a href="../../pages/services_page/services.html" class="text-white hover:text-koops-green px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</a>
+                    <a href="../../pages/parts_page/parts.html" class="text-white hover:text-koops-green px-3 py-2 rounded-md text-sm font-medium transition-colors">Parts</a>
+                    <a href="../../pages/pre-owned_page/pre-owned.html" class="text-white hover:text-koops-green px-3 py-2 rounded-md text-sm font-medium transition-colors">Pre-Owned</a>
+                    <a href="../../pages/customer_portal_page/customer portal.html" class="text-white hover:text-koops-green px-3 py-2 rounded-md text-sm font-medium transition-colors">Customer Portal</a>
+                    <a style = "color: #80c441 " class="text-white hover:text-koops-green px-3 py-2 rounded-md text-sm font-medium transition-colors">Find a Store</a>
+                    <a href="#contact" class="bg-koops-green text-koops-dark px-4 py-2 rounded-md text-sm font-medium hover:bg-green-400 transition-colors">Contact Us</a>
+                </div>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-white hover:text-koops-green">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="md:hidden hidden bg-koops-gray">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="../../pages/motorcycles_page/motorcycles.html" class="text-white hover:text-koops-green block px-3 py-2 rounded-md text-base font-medium">Motorcycles</a>
+            <a href="../../pages/services_page/services.html" class="text-white hover:text-koops-green block px-3 py-2 rounded-md text-base font-medium">Services</a>
+            <a href="../../pages/parts_page/parts.html" class="text-white hover:text-koops-green block px-3 py-2 rounded-md text-base font-medium">Parts</a>
+            <a href="../../pages/pre-owned_page/pre-owned.html" class="text-white hover:text-koops-green block px-3 py-2 rounded-md text-base font-medium">Pre-Owned</a>
+            <a href="../../pages/customer_portal_page/customer portal.html" class="text-white hover:text-koops-green block px-3 py-2 rounded-md text-base font-medium">Customer Portal</a>
+            <a style = "color: #80c441 " class="text-koops-green block px-3 py-2 rounded-md text-base font-medium">Find a Store</a>
+            <a href="#contact" class="text-white hover:text-koops-green block px-3 py-2 rounded-md text-base font-medium">Contact Us</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ========================================
+     HTML STRUCTURE - PAGE HERO SECTION
+     ======================================== -->
+<section class="relative bg-gradient-to-r from-koops-dark via-koops-gray to-koops-dark pt-20 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-5xl lg:text-7xl font-bold mb-6">
+                <span class="text-koops-green">FIND A</span><br>
+                <span class="text-white">STORE</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Locate your nearest KOOPSIKLO dealership for sales, service, parts, and expert motorcycle support.
+            </p>
+            <div class="flex justify-center items-center space-x-6 text-gray-300 flex-wrap gap-4">
+                <span><i class="fas fa-map-marker-alt text-koops-green mr-2"></i>5+ Locations</span>
+                <span><i class="fas fa-clock text-koops-green mr-2"></i>Extended Hours</span>
+                <span><i class="fas fa-tools text-koops-green mr-2"></i>Full Service</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     HTML STRUCTURE - STORE LOCATOR SECTION
+     ======================================== -->
+<section class="py-16 bg-koops-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Search and Filter Bar -->
+        <div class="bg-koops-gray rounded-xl p-6 mb-8">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+                <!-- Location Search -->
+                <div class="lg:col-span-2">
+                    <div class="relative">
+                        <input type="text" id="location-search" placeholder="Enter city, address, or ZIP code..." class="w-full pl-12 pr-4 py-3 bg-koops-dark text-white rounded-lg border border-gray-600 focus:border-koops-green focus:outline-none transition-colors">
+                        <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-koops-green"></i>
+                    </div>
+                </div>
+                
+                <!-- Service Filter -->
+                <div>
+                    <select id="service-filter" class="w-full px-4 py-3 bg-koops-dark text-white rounded-lg border border-gray-600 focus:border-koops-green focus:outline-none transition-colors">
+                        <option value="">All Services</option>
+                        <option value="sales">Motorcycle Sales</option>
+                        <option value="service">Service & Repair</option>
+                        <option value="parts">Parts & Accessories</option>
+                        <option value="financing">Financing</option>
+                    </select>
+                </div>
+                
+                <!-- Find Nearest Button -->
+                <div>
+                    <button id="find-nearest" class="w-full bg-koops-green text-koops-dark py-3 rounded-lg font-bold hover:bg-green-400 transition-colors">
+                        <i class="fas fa-location-arrow mr-2"></i>Find Nearest
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Quick Filters -->
+            <div class="flex flex-wrap gap-2 mt-4">
+                <button class="filter-chip active bg-koops-green text-koops-dark px-4 py-2 rounded-full text-sm font-bold" data-filter="all">
+                    All Stores
+                </button>
+                <button class="filter-chip bg-koops-dark text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-koops-green hover:text-koops-dark transition-colors" data-filter="open">
+                    Open Now
+                </button>
+                <button class="filter-chip bg-koops-dark text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-koops-green hover:text-koops-dark transition-colors" data-filter="weekend">
+                    Weekend Hours
+                </button>
+                <button class="filter-chip bg-koops-dark text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-koops-green hover:text-koops-dark transition-colors" data-filter="service">
+                    Service Center
+                </button>
+            </div>
+        </div>
+        
+        <!-- Map and Store List Container -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Interactive Map -->
+            <div class="bg-koops-gray rounded-xl p-6">
+                <h3 class="text-2xl font-bold text-white mb-4">Store Locations</h3>
+                <div id="store-map" class="bg-koops-dark rounded-lg h-96 flex items-center justify-center relative overflow-hidden">
+                    <!-- Simulated Map with Store Markers -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900">
+                        <!-- Map Grid Lines -->
+                        <div class="absolute inset-0 opacity-20">
+                            <div class="grid grid-cols-8 grid-rows-6 h-full">
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-r border-b border-gray-600"></div>
+                                <div class="border-b border-gray-600"></div>
+                                <div class="border-r"></div>
+                                <div class="border-r"></div>
+                                <div class="border-r"></div>
+                                <div class="border-r"></div>
+                                <div class="border-r"></div>
+                                <div class="border-r"></div>
+                                <div class="border-r"></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Store Markers -->
+                        <div class="store-marker absolute top-1/4 left-1/3 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-store="quezon-city">
+                            <div class="bg-koops-green text-koops-dark w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm hover:scale-110 transition-transform">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 bg-koops-dark text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity">
+                                Quezon City
+                            </div>
+                        </div>
+                        
+                        <div class="store-marker absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-store="makati">
+                            <div class="bg-koops-green text-koops-dark w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm hover:scale-110 transition-transform">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 bg-koops-dark text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity">
+                                Makati
+                            </div>
+                        </div>
+                        
+                        <div class="store-marker absolute top-3/4 left-2/5 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-store="manila">
+                            <div class="bg-koops-green text-koops-dark w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm hover:scale-110 transition-transform">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 bg-koops-dark text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity">
+                                Manila
+                            </div>
+                        </div>
+                        
+                        <div class="store-marker absolute top-1/3 left-3/5 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-store="pasig">
+                            <div class="bg-koops-green text-koops-dark w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm hover:scale-110 transition-transform">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 bg-koops-dark text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity">
+                                Pasig
+                            </div>
+                        </div>
+                        
+                        <div class="store-marker absolute top-2/3 left-3/4 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-store="cebu">
+                            <div class="bg-koops-green text-koops-dark w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm hover:scale-110 transition-transform">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 bg-koops-dark text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity">
+                                Cebu
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map Controls -->
+                    <div class="absolute top-4 right-4 flex flex-col space-y-2">
+                        <button class="bg-koops-dark text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-koops-green hover:text-koops-dark transition-colors">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button class="bg-koops-dark text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-koops-green hover:text-koops-dark transition-colors">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button class="bg-koops-dark text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-koops-green hover:text-koops-dark transition-colors">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Map Legend -->
+                <div class="mt-4 flex items-center justify-between text-sm text-gray-400">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-koops-green rounded-full mr-2"></div>
+                            <span>KOOPSIKLO Store</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-blue-500 rounded-full mr-2"></div>
+                            <span>Your Location</span>
+                        </div>
+                    </div>
+                    <span>Click markers for details</span>
+                </div>
+            </div>
+            
+            <!-- Store List -->
+            <div class="bg-koops-gray rounded-xl p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-2xl font-bold text-white">Store Directory</h3>
+                    <span class="text-gray-400 text-sm"><span id="store-count">5</span> stores found</span>
+                </div>
+                
+                <div id="store-list" class="space-y-4 max-h-96 overflow-y-auto">
+                    <!-- Store Card 1 -->
+                    <div class="store-card bg-koops-dark rounded-lg p-4 hover:transform hover:scale-105 transition-all duration-300" data-store="quezon-city">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h4 class="text-lg font-bold text-white">KOOPSIKLO Quezon City</h4>
+                                <p class="text-gray-400 text-sm">Flagship Store</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="bg-green-600 text-white px-2 py-1 rounded-full text-xs font-bold">OPEN</span>
+                                <span class="text-koops-green text-sm font-bold">2.3 km</span>
+                            </div>
+                        </div>
+                        
+                        <div class="text-gray-300 text-sm mb-3">
+                            <p><i class="fas fa-map-marker-alt text-koops-green mr-2"></i>123 Commonwealth Ave, Quezon City</p>
+                            <p><i class="fas fa-phone text-koops-green mr-2"></i>(02) 8123-4567</p>
+                            <p><i class="fas fa-clock text-koops-green mr-2"></i>Mon-Sat: 8AM-7PM, Sun: 9AM-5PM</p>
+                        </div>
+                        
+                        <!-- Services -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Sales</span>
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Service</span>
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Parts</span>
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Financing</span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-koops-green text-koops-dark py-2 px-3 rounded font-bold text-sm hover:bg-green-400 transition-colors">
+                                <i class="fas fa-directions mr-1"></i>Directions
+                            </button>
+                            <button class="flex-1 bg-koops-gray text-white py-2 px-3 rounded font-bold text-sm hover:bg-gray-600 transition-colors">
+                                <i class="fas fa-phone mr-1"></i>Call
+                            </button>
+                            <button class="flex-1 bg-koops-gray text-white py-2 px-3 rounded font-bold text-sm hover:bg-gray-600 transition-colors">
+                                <i class="fas fa-calendar mr-1"></i>Book
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Store Card 2 -->
+                    <div class="store-card bg-koops-dark rounded-lg p-4 hover:transform hover:scale-105 transition-all duration-300" data-store="makati">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h4 class="text-lg font-bold text-white">KOOPSIKLO Makati</h4>
+                                <p class="text-gray-400 text-sm">Premium Center</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="bg-green-600 text-white px-2 py-1 rounded-full text-xs font-bold">OPEN</span>
+                                <span class="text-koops-green text-sm font-bold">5.7 km</span>
+                            </div>
+                        </div>
+                        
+                        <div class="text-gray-300 text-sm mb-3">
+                            <p><i class="fas fa-map-marker-alt text-koops-green mr-2"></i>456 Ayala Avenue, Makati City</p>
+                            <p><i class="fas fa-phone text-koops-green mr-2"></i>(02) 8234-5678</p>
+                            <p><i class="fas fa-clock text-koops-green mr-2"></i>Mon-Sat: 9AM-8PM, Sun: 10AM-6PM</p>
+                        </div>
+                        
+                        <!-- Services -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Sales</span>
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Service</span>
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Parts</span>
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Premium</span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-koops-green text-koops-dark py-2 px-3 rounded font-bold text-sm hover:bg-green-400 transition-colors">
+                                <i class="fas fa-directions mr-1"></i>Directions
+                            </button>
+                            <button class="flex-1 bg-koops-gray text-white py-2 px-3 rounded font-bold text-sm hover:bg-gray-600 transition-colors">
+                                <i class="fas fa-phone mr-1"></i>Call
+                            </button>
+                            <button class="flex-1 bg-koops-gray text-white py-2 px-3 rounded font-bold text-sm hover:bg-gray-600 transition-colors">
+                                <i class="fas fa-calendar mr-1"></i>Book
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Store Card 3 -->
+                    <div class="store-card bg-koops-dark rounded-lg p-4 hover:transform hover:scale-105 transition-all duration-300" data-store="manila">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h4 class="text-lg font-bold text-white">KOOPSIKLO Manila</h4>
+                                <p class="text-gray-400 text-sm">Service Center</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="bg-red-600 text-white px-2 py-1 rounded-full text-xs font-bold">CLOSED</span>
+                                <span class="text-koops-green text-sm font-bold">8.1 km</span>
+                            </div>
+                        </div>
+                        
+                        <div class="text-gray-300 text-sm mb-3">
+                            <p><i class="fas fa-map-marker-alt text-koops-green mr-2"></i>789 Rizal Avenue, Manila</p>
+                            <p><i class="fas fa-phone text-koops-green mr-2"></i>(02) 8345-6789</p>
+                            <p><i class="fas fa-clock text-koops-green mr-2"></i>Mon-Fri: 8AM-6PM, Sat: 8AM-4PM</p>
+                        </div>
+                        
+                        <!-- Services -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Service</span>
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Parts</span>
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Repair</span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-koops-green text-koops-dark py-2 px-3 rounded font-bold text-sm hover:bg-green-400 transition-colors">
+                                <i class="fas fa-directions mr-1"></i>Directions
+                            </button>
+                            <button class="flex-1 bg-koops-gray text-white py-2 px-3 rounded font-bold text-sm hover:bg-gray-600 transition-colors">
+                                <i class="fas fa-phone mr-1"></i>Call
+                            </button>
+                            <button class="flex-1 bg-koops-gray text-white py-2 px-3 rounded font-bold text-sm hover:bg-gray-600 transition-colors">
+                                <i class="fas fa-calendar mr-1"></i>Book
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Store Card 4 -->
+                    <div class="store-card bg-koops-dark rounded-lg p-4 hover:transform hover:scale-105 transition-all duration-300" data-store="pasig">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h4 class="text-lg font-bold text-white">KOOPSIKLO Pasig</h4>
+                                <p class="text-gray-400 text-sm">Express Center</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="bg-green-600 text-white px-2 py-1 rounded-full text-xs font-bold">OPEN</span>
+                                <span class="text-koops-green text-sm font-bold">12.4 km</span>
+                            </div>
+                        </div>
+                        
+                        <div class="text-gray-300 text-sm mb-3">
+                            <p><i class="fas fa-map-marker-alt text-koops-green mr-2"></i>321 Ortigas Avenue, Pasig City</p>
+                            <p><i class="fas fa-phone text-koops-green mr-2"></i>(02) 8456-7890</p>
+                            <p><i class="fas fa-clock text-koops-green mr-2"></i>Mon-Sun: 7AM-9PM</p>
+                        </div>
+                        
+                        <!-- Services -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Sales</span>
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Express Service</span>
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Parts</span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-koops-green text-koops-dark py-2 px-3 rounded font-bold text-sm hover:bg-green-400 transition-colors">
+                                <i class="fas fa-directions mr-1"></i>Directions
+                            </button>
+                            <button class="flex-1 bg-koops-gray text-white py-2 px-3 rounded font-bold text-sm hover:bg-gray-600 transition-colors">
+                                <i class="fas fa-phone mr-1"></i>Call
+                            </button>
+                            <button class="flex-1 bg-koops-gray text-white py-2 px-3 rounded font-bold text-sm hover:bg-gray-600 transition-colors">
+                                <i class="fas fa-calendar mr-1"></i>Book
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Store Card 5 -->
+                    <div class="store-card bg-koops-dark rounded-lg p-4 hover:transform hover:scale-105 transition-all duration-300" data-store="cebu">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h4 class="text-lg font-bold text-white">KOOPSIKLO Cebu</h4>
+                                <p class="text-gray-400 text-sm">Regional Hub</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="bg-green-600 text-white px-2 py-1 rounded-full text-xs font-bold">OPEN</span>
+                                <span class="text-koops-green text-sm font-bold">650 km</span>
+                            </div>
+                        </div>
+                        
+                        <div class="text-gray-300 text-sm mb-3">
+                            <p><i class="fas fa-map-marker-alt text-koops-green mr-2"></i>654 Colon Street, Cebu City</p>
+                            <p><i class="fas fa-phone text-koops-green mr-2"></i>(032) 567-8901</p>
+                            <p><i class="fas fa-clock text-koops-green mr-2"></i>Mon-Sat: 8AM-7PM, Sun: 9AM-5PM</p>
+                        </div>
+                        
+                        <!-- Services -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Sales</span>
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Service</span>
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Parts</span>
+                            <span class="bg-koops-green text-koops-dark px-2 py-1 rounded text-xs font-bold">Training</span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-koops-green text-koops-dark py-2 px-3 rounded font-bold text-sm hover:bg-green-400 transition-colors">
+                                <i class="fas fa-directions mr-1"></i>Directions
+                            </button>
+                            <button class="flex-1 bg-koops-gray text-white py-2 px-3 rounded font-bold text-sm hover:bg-gray-600 transition-colors">
+                                <i class="fas fa-phone mr-1"></i>Call
+                            </button>
+                            <button class="flex-1 bg-koops-gray text-white py-2 px-3 rounded font-bold text-sm hover:bg-gray-600 transition-colors">
+                                <i class="fas fa-calendar mr-1"></i>Book
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     HTML STRUCTURE - STORE SERVICES SECTION
+     ======================================== -->
+<section class="py-16 bg-koops-gray">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-white mb-4">What We Offer</h2>
+            <p class="text-xl text-gray-300">Comprehensive motorcycle services at every KOOPSIKLO location</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Sales -->
+            <div class="service-feature bg-koops-dark rounded-xl p-8 text-center hover:transform hover:scale-105 transition-all duration-300">
+                <div class="text-5xl text-koops-green mb-6">
+                    <i class="fas fa-motorcycle"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Motorcycle Sales</h3>
+                <p class="text-gray-300 mb-4">Browse our complete lineup of new motorcycles with expert guidance and competitive pricing.</p>
+                <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• New motorcycle inventory</li>
+                    <li>• Test rides available</li>
+                    <li>• Trade-in evaluations</li>
+                    <li>• Financing options</li>
+                </ul>
+            </div>
+            
+            <!-- Service & Repair -->
+            <div class="service-feature bg-koops-dark rounded-xl p-8 text-center hover:transform hover:scale-105 transition-all duration-300">
+                <div class="text-5xl text-koops-green mb-6">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Service & Repair</h3>
+                <p class="text-gray-300 mb-4">Professional maintenance and repair services by certified technicians using genuine parts.</p>
+                <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• Scheduled maintenance</li>
+                    <li>• Engine diagnostics</li>
+                    <li>• Warranty repairs</li>
+                    <li>• Emergency service</li>
+                </ul>
+            </div>
+            
+            <!-- Parts & Accessories -->
+            <div class="service-feature bg-koops-dark rounded-xl p-8 text-center hover:transform hover:scale-105 transition-all duration-300">
+                <div class="text-5xl text-koops-green mb-6">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Parts & Accessories</h3>
+                <p class="text-gray-300 mb-4">Genuine OEM parts and premium accessories to keep your motorcycle running perfectly.</p>
+                <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• Genuine OEM parts</li>
+                    <li>• Performance upgrades</li>
+                    <li>• Safety accessories</li>
+                    <li>• Custom modifications</li>
+                </ul>
+            </div>
+            
+            <!-- Customer Support -->
+            <div class="service-feature bg-koops-dark rounded-xl p-8 text-center hover:transform hover:scale-105 transition-all duration-300">
+                <div class="text-5xl text-koops-green mb-6">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Customer Support</h3>
+                <p class="text-gray-300 mb-4">Dedicated support team ready to assist with all your motorcycle needs and questions.</p>
+                <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• Technical support</li>
+                    <li>• Warranty assistance</li>
+                    <li>• Parts ordering</li>
+                    <li>• Service scheduling</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     HTML STRUCTURE - FOOTER SECTION
+     ======================================== -->
+<footer class="bg-koops-gray py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <!-- Logo -->
+                <div class="flex-shrink-0 mb-4">
+                    <img 
+                        src="../../resources/images/koopsiklo_logo.jpg" 
+                        alt="KOOPSIKLO Logo" 
+                        class="w-36 h-auto"
+                    >
+                </div>
+                <p class="text-gray-300 leading-relaxed">
+                    Your Adventure Begins Today.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-gray-300">
+                    <li><a href="../../pages/motorcycles_page/motorcycles.html" class="hover:text-koops-green">Motorcycles</a></li>
+                    <li><a href="../../pages/services_page/services.html" class="hover:text-koops-green">Services</a></li>
+                    <li><a href="../../pages/parts_page/parts.html" class="hover:text-koops-green">Parts</a></li>
+                    <li><a href="../../pages/pre-owned_page/pre-owned.html" class="hover:text-koops-green">Pre-Owned</a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Contact Section -->
+            <div id="contact">
+                <h4 class="text-lg font-semibold text-white mb-4">Contact Us</h4>
+                <ul class="space-y-2" style="color: #80c441;">
+                    <li>koopsiklogulodlabac@gmail.com | sidckoopsiklozaragoza@gmail.com</li>
+                    <li>0998 860 6547 | 0998 978 7353</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Connect</h4>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/SIDCKoopsikloGulodOfficial" class="text-koops-green hover:text-green-400 text-2xl"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-koops-green hover:text-green-400 text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-koops-green hover:text-green-400 text-2xl"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
+            <p>&copy; 2025 KOOPSIKLO. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'95b507f851d0bc4b',t:'MTc1MTg2NzA3OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

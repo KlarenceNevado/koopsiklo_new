@@ -1,0 +1,127 @@
+<!-- ========================================
+     CSS/SCSS STYLES - CUSTOM ANIMATIONS AND RESPONSIVE DESIGN
+     ======================================== -->
+
+/* Smooth scrolling for navigation */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Parts category animations */
+.parts-category {
+    transition: all 0.3s ease;
+}
+
+.parts-category:hover {
+    box-shadow: 0 20px 40px rgba(0, 255, 136, 0.1);
+}
+
+/* Form animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Form focus states */
+input:focus, select:focus, textarea:focus {
+    box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+}
+
+/* Form validation states */
+.form-valid {
+    border-color: #00ff88;
+}
+
+.form-invalid {
+    border-color: #ef4444;
+}
+
+/* Submit button animation */
+#submit-inquiry {
+    transition: all 0.3s ease;
+}
+
+#submit-inquiry:hover {
+    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.3);
+}
+
+/* Loading state */
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid #0a0a0a;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .text-7xl {
+        font-size: 3rem;
+    }
+    
+    .text-5xl {
+        font-size: 2.5rem;
+    }
+    
+    .parts-category {
+        margin-bottom: 1rem;
+    }
+    
+    .grid.grid-cols-2.md\\:grid-cols-4.lg\\:grid-cols-6 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Radio button styling */
+input[type="radio"] {
+    accent-color: #00ff88;
+}
+
+/* Success message styling */
+.success-message {
+    background: linear-gradient(135deg, #00ff88, #00cc6a);
+    animation: slideInFromTop 0.5s ease-out;
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+

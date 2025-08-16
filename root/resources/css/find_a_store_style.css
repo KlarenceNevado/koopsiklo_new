@@ -1,0 +1,179 @@
+/*<!-- ========================================
+     CSS/SCSS STYLES - CUSTOM ANIMATIONS AND RESPONSIVE DESIGN
+     ======================================== -->
+
+/* Smooth scrolling for navigation */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Store locator animations */
+.store-card {
+    transition: all 0.3s ease;
+}
+
+.store-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 255, 136, 0.1);
+}
+
+.store-marker {
+    transition: all 0.3s ease;
+}
+
+.store-marker:hover {
+    z-index: 10;
+}
+
+/* Service feature animations */
+.service-feature {
+    transition: all 0.3s ease;
+}
+
+.service-feature:hover {
+    box-shadow: 0 20px 40px rgba(0, 255, 136, 0.1);
+}
+
+/* Filter chip animations */
+.filter-chip {
+    transition: all 0.3s ease;
+}
+
+.filter-chip.active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 255, 136, 0.3);
+}
+
+/* Form animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Form focus states */
+input:focus, select:focus {
+    box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+}
+
+/* Loading state */
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid #00ff88;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .text-7xl {
+        font-size: 3rem;
+    }
+    
+    .text-5xl {
+        font-size: 2.5rem;
+    }
+    
+    .store-card {
+        margin-bottom: 1rem;
+    }
+    
+    .grid.grid-cols-1.lg\\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid.grid-cols-1.lg\\:grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Map responsiveness */
+@media (max-width: 640px) {
+    #store-map {
+        height: 250px;
+    }
+    
+    .store-marker div {
+        width: 24px;
+        height: 24px;
+        font-size: 10px;
+    }
+}
+
+/* Success message styling */
+.success-message {
+    background: linear-gradient(135deg, #00ff88, #00cc6a);
+    animation: slideInFromTop 0.5s ease-out;
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Store status indicators */
+.status-open {
+    background-color: #10b981;
+}
+
+.status-closed {
+    background-color: #ef4444;
+}
+
+.status-busy {
+    background-color: #f59e0b;
+}
+
+/* Scrollbar styling for store list */
+#store-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#store-list::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 3px;
+}
+
+#store-list::-webkit-scrollbar-thumb {
+    background: #00ff88;
+    border-radius: 3px;
+}
+
+#store-list::-webkit-scrollbar-thumb:hover {
+    background: #00cc6a;
+}
+
+html {
+    scroll-behavior: smooth;
+}
